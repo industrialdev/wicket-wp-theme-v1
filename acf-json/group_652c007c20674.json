@@ -1,0 +1,258 @@
+{
+    "key": "group_652c007c20674",
+    "title": "Global Settings",
+    "fields": [
+        {
+            "key": "field_6542ac41ae1fb",
+            "label": "Site Logo",
+            "name": "site_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": "",
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_652c00a80a441",
+            "label": "Social Media Links",
+            "name": "social_media_links",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_652c00b2d4173": {
+                    "key": "layout_652c00b2d4173",
+                    "name": "facebook-f",
+                    "label": "Facebook",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_652c00d80a442",
+                            "label": "Facebook Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                },
+                "layout_652c00fe0a443": {
+                    "key": "layout_652c00fe0a443",
+                    "name": "x-twitter",
+                    "label": "X",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_652c00fe0a444",
+                            "label": "X Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                },
+                "layout_652c010a0a445": {
+                    "key": "layout_652c010a0a445",
+                    "name": "linkedin-in",
+                    "label": "LinkedIn",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_652c010a0a446",
+                            "label": "LinkedIn Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                },
+                "layout_652c01270a447": {
+                    "key": "layout_652c01270a447",
+                    "name": "instagram",
+                    "label": "Instagram",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_652c01270a448",
+                            "label": "Instagram Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                },
+                "layout_652c013b0a449": {
+                    "key": "layout_652c013b0a449",
+                    "name": "youtube",
+                    "label": "Youtube",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_652c013b0a44a",
+                            "label": "Youtube Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "wpml_cf_preferences": 0,
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
+                },
+                "layout_6650b64c572fb": {
+                    "key": "layout_6650b64c572fb",
+                    "name": "custom_other",
+                    "label": "Custom\/Other",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_6650b64c572fc",
+                            "label": "Custom\/Other Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6650b66a572fd",
+                            "label": "FontAwesome Icon Class(es)",
+                            "name": "fontawesome_icon_classes",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Grab the desired FontAwesome icon classes from https:\/\/fontawesome.com\/icons",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "E.g. fa-brands fa-youtube",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Social Media"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-global"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1716996336
+}

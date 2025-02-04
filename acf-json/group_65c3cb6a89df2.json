@@ -1,0 +1,53 @@
+{
+    "key": "group_65c3cb6a89df2",
+    "title": "Development Settings",
+    "fields": [
+        {
+            "key": "field_65c3cb6b3d833",
+            "label": "Save ACF JSON To",
+            "name": "save_acf_json_to",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "child": "Child\/Active Theme",
+                "parent": "Parent Theme"
+            },
+            "default_value": "child",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-global"
+            }
+        ]
+    ],
+    "menu_order": 999,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "translation",
+    "modified": 1707330554
+}

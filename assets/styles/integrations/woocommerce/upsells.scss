@@ -1,0 +1,49 @@
+.woocommerce {
+  .upsells,
+  .related.products {
+    & > h2 {
+      font-weight: bold;
+      font-size: var(--wp--preset--font-size--heading-md);
+      margin-bottom: 1rem;
+    }
+
+    ul.products {
+      li.product {
+        margin-right: 1.25rem;
+        margin-bottom: 1.25rem;
+
+        .onsale {
+          top: 10px;
+          left: 10px;
+          right: auto;
+          margin: 0;
+        }
+
+        .attachment-woocommerce_thumbnail {
+          margin-bottom: 1rem;
+        }
+
+        .woocommerce-loop-product__title {
+          font-weight: bold;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+          padding: 0;
+        }
+
+        .price {
+          color: var(--wp--preset--color--dark);
+
+          del {
+            opacity: 1;
+          }
+        }
+
+        .button {
+          background-color: var(--wp--preset--color--primary);
+          color: var(--wp--preset--color--white);
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}

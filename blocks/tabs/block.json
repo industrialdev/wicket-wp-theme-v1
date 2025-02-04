@@ -1,0 +1,31 @@
+{
+  "name": "wicket/tabs",
+  "title": "Tabs",
+  "description": "A Wicket block for tabs",
+  "style": "block-wicket-tabs",
+  "category": "theme",
+  "icon": "",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "styles": [],
+  "supports": {
+    "align": ["full"],
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    },
+    "alignText": false,
+    "fullHeight": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.wp-block-columns {
+  /* CASE: Has contexttual nav block */
+  &:has(.wp-block-column .wp-block-wicket-sidebar-contextual-nav) {
+    .wp-block-column {
+      &:first-child {
+        order: 2;
+      }
+      &:last-child {
+        order: 1;
+      }
+      @include media-breakpoint-down('768px') {
+        &:first-child,
+        &:last-child {
+          order: initial;
+        }
+      }
+    }
+  }
+}

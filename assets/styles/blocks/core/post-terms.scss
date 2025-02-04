@@ -1,0 +1,9 @@
+.wp-block-post-terms {
+  /* Case: Post term block in the single post */
+  .single-post & {
+    padding-inline: 1rem;
+    @include media-breakpoint-down('1024px') {
+      padding-inline: 0;
+    }
+  }
+}

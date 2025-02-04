@@ -1,0 +1,8 @@
+:where(.wp-block-column) {
+  .wp-block-wicket-card {
+    .component-card,
+    & > div {
+      height: 100%;
+    }
+  }
+}

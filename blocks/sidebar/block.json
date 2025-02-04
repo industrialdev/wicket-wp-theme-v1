@@ -1,0 +1,14 @@
+{
+  "name": "wicket/sidebar",
+  "title": "Sidebar",
+  "description": "A Wicket block for sidebar widgets.",
+  "style": "block-wicket-sidebar",
+  "category": "theme",
+  "icon": "format-aside",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  }
+}

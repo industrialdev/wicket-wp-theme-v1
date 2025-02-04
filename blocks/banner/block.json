@@ -1,0 +1,31 @@
+{
+  "name": "wicket/banner",
+  "title": "Banner",
+  "description": "A Wicket block for banner",
+  "style": "block-wicket-banner",
+  "category": "theme",
+  "icon": "",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "styles": [],
+  "supports": {
+    "align": ["full"],
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    },
+    "alignText": true,
+    "fullHeight": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

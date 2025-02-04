@@ -1,0 +1,54 @@
+{
+    "key": "group_65c3f94ef193d",
+    "title": "Block - Sidebar\/Contextual Nav",
+    "fields": [
+        {
+            "key": "field_65c3f94f9422d",
+            "label": "Icon Type",
+            "name": "icon_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "plus-minus": "Plus\/Minus",
+                "chevrons": "Chevrons",
+                "carets": "Carets"
+            },
+            "default_value": "chevrons",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "wicket\/sidebar-contextual-nav"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1717415239
+}

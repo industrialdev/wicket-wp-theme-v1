@@ -1,0 +1,37 @@
+.wp-block-heading {
+  font-family: var(--wp--preset--font-family--system-sans-serif);
+  margin-bottom: var(--wp--preset--spacing--200);
+
+  @at-root {
+    h1#{&} {
+      font-size: var(--wp--preset--font-size--heading-3-xl);
+      line-height: clamp(2.5rem, 3vw + 1rem, 3.25rem);
+      font-weight: 700;
+    }
+    h2#{&} {
+      font-size: var(--wp--preset--font-size--heading-2-xl);
+      line-height: clamp(2.5rem, 3vw + 1rem, 3.25rem);
+      font-weight: 400;
+    }
+    h3#{&} {
+      font-size: var(--wp--preset--font-size--heading-xl);
+      line-height: clamp(2rem, 2vw + 1rem, 2.25rem);
+      font-weight: 700;
+    }
+    h4#{&} {
+      font-size: var(--wp--preset--font-size--heading-lg);
+      line-height: clamp(1.75rem, 2vw + 1rem, 2rem);
+      font-weight: 400;
+    }
+    h5#{&} {
+      font-size: var(--wp--preset--font-size--heading-md);
+      line-height: clamp(1.5rem, 2vw + 1rem, 1.75rem);
+      font-weight: 700;
+    }
+    h6#{&} {
+      font-size: var(--wp--preset--font-size--heading-sm);
+      line-height: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+      font-weight: 700;
+    }
+  }
+}

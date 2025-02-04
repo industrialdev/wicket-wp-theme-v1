@@ -1,0 +1,43 @@
+{
+  "name": "wicket/dynamically-related-events",
+  "title": "Dynamically Related Events",
+  "description": "A Wicket block for dynamically related events.",
+  "style": "block-wicket-dynamically-related-events",
+  "category": "theme",
+  "icon": "",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"],
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": true,
+      "link": false
+    },
+    "alignText": true,
+    "fullHeight": false,
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--500)",
+            "bottom": "var(--wp--preset--spacing--500)"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "wicket/search-form",
+  "title": "Search Form",
+  "description": "A Wicket block for search form",
+  "style": "block-wicket-search-form",
+  "category": "theme",
+  "icon": "search",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "styles": [],
+  "supports": {
+    "align": ["full"],
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    },
+    "alignText": true,
+    "fullHeight": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

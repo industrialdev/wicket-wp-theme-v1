@@ -1,0 +1,45 @@
+@mixin add-external-icon {
+  &:after {
+    display: inline-block;
+    content: '\f35d';
+    font-family: var(--fa-style-family, 'Font Awesome 6 Pro');
+    font-weight: inherit;
+    margin-left: 4px;
+    font-size: 90%;
+  }
+}
+
+@mixin media-breakpoint-down($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// Create container adjustment mixin rules
+@mixin container-adjustments {
+  @media (min-width: 1536px) {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+  @media (min-width: var(--wp--style--global--content-size)) {
+    max-width: var(--wp--style--global--content-size) !important;
+  }
+}
+// Make the combined Tailwind and adjusted container rules available via mixin, if needed
+@mixin the-container {
+  @apply container;
+  @include container-adjustments;
+}
+
+@mixin wc-alert {
+  border-top: none;
+  border-left: 4px solid transparent;
+  color: var(--wp--preset--color--dark);
+  padding: 1.5rem 2rem 1.5rem 4rem;
+
+  &:before {
+    font-size: 135%;
+    top: 50%;
+    left: 15px;
+    transform: translatey(-50%);
+  }
+}

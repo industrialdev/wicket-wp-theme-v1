@@ -1,0 +1,37 @@
+#tribe-events-pg-template, .tribe-events-pg-template {
+  max-width: unset;
+  padding: 0;
+
+  .tribe-events-back, .tribe-events-single-event-title,
+  #tribe-events-footer, .tribe-block, .tribe-events-schedule,
+  *[class*='tribe-block__']:not(.tribe-block__venue__meta):not(.tribe-block__venue__map), // Exclude venue meta and map blocks
+  .tribe-related-events,
+  .tribe-link-view-attendee,
+  .tribe-common {
+    //@apply container;
+    @include the-container;
+  }
+
+  .tribe-common {
+    @apply mb-4;
+  }
+
+  *[class*=wp-block] {
+    .tribe-common {
+      @apply mx-0;
+    }
+  }
+
+  // Hiding event title and breadcrumbs since we add it with our Banner block
+  .tribe-events-single-event-title, .tribe-events-back {
+    display: none;
+  }
+}
+
+.single-tribe_events {
+  #tribe-events-content.tribe-blocks-editor {
+    .tribe-events-event-meta {
+      @include the-container;
+    }
+  }
+}

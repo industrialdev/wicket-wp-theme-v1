@@ -1,0 +1,19 @@
+.woocommerce {
+  div.product {
+    form.cart {
+      .variations {
+        margin-bottom: 2rem;
+
+        tr:has(.label) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .value {
+            min-width: 350px;
+          }
+        }
+      }
+    }
+  }
+}

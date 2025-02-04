@@ -1,0 +1,66 @@
+form.woocommerce-checkout {
+  /* Title */
+  h3 {
+    font-size: var(--wp--preset--font-size--heading-md);
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  /* Select2 field */
+  .select2-selection {
+    height: 43px;
+    border-color: #7b7f83;
+
+    .select2-selection__rendered {
+      line-height: 43px;
+    }
+
+    .select2-selection__arrow {
+      height: 40px;
+      right: 6px;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjI4OTIgNi43ODkyMkw4LjUzOTIyIDExLjI1OEM4LjM4Mjk3IDExLjQxNDIgOC4xOTU0NyAxMS40NzY3IDguMDM5MjIgMTEuNDc2N0M3Ljg1MTcyIDExLjQ3NjcgNy42NjQyMiAxMS40MTQyIDcuNTA3OTcgMTEuMjg5MkwyLjc1Nzk3IDYuNzg5MjJDMi40NDU0NyA2LjUwNzk3IDIuNDQ1NDcgNi4wMzkyMiAyLjcyNjcyIDUuNzI2NzJDMy4wMDc5NyA1LjQxNDIyIDMuNDc2NzIgNS40MTQyMiAzLjc4OTIyIDUuNjk1NDdMOC4wMzkyMiA5LjY5NTQ3TDEyLjI1OCA1LjY5NTQ3QzEyLjU3MDUgNS40MTQyMiAxMy4wMzkyIDUuNDE0MjIgMTMuMzIwNSA1LjcyNjcyQzEzLjYwMTcgNi4wMzkyMiAxMy42MDE3IDYuNTA3OTcgMTMuMjg5MiA2Ljc4OTIyWiIgZmlsbD0iIzIzMkEzMSIvPgo8L3N2Zz4=');
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      b {
+        display: none;
+      }
+    }
+  }
+
+  /* Shipping fields */
+  .woocommerce-shipping-fields {
+    margin-bottom: 2rem;
+  }
+
+  /* Review order section */
+  .woocommerce-checkout-review-order {
+    .woocommerce-checkout-review-order-table {
+      border: none;
+
+      th,
+      td {
+        &:is(:first-child) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  /* Payment section */
+  .woocommerce-checkout-payment {
+    border-radius: 0;
+    background-color: #e9eaea;
+
+    #place_order {
+      width: 100%;
+      margin-top: 2rem;
+      background-color: var(--wp--preset--color--primary);
+      color: var(--wp--preset--color--white);
+    }
+  }
+
+  .variation-TeamName {
+    display: none !important;
+  }
+}

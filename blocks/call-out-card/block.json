@@ -1,0 +1,31 @@
+{
+  "name": "wicket/call-out-card",
+  "title": "Call Out Card",
+  "description": "A Wicket block for call out card",
+  "style": "block-wicket-call-out-card",
+  "category": "theme",
+  "icon": "",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "styles": [],
+  "supports": {
+    "align": ["full"],
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    },
+    "alignText": true,
+    "fullHeight": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

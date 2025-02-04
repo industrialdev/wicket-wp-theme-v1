@@ -1,0 +1,33 @@
+.wp-block-paragraph > p {
+  margin-bottom: 0.5rem; // In addition to the 1rem for all Blocks in baseline.scss
+  
+  &.alignfull {
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 1px 2px #0997ff;
+      text-decoration: none;
+    }
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  /* Case: Paragraphs in the single post */
+  .single-post & {
+    padding-inline: 1rem;
+    @include media-breakpoint-down('1024px') {
+      max-width: 75%;
+      padding-inline: 0;
+    }
+  }
+}

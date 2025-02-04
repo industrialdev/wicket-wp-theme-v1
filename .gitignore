@@ -1,0 +1,10 @@
+.vagrant
+node_modules
+.DS_Store
+*Zone.Identifier
+.idea
+.env
+*.log
+debug.log
+!assets/scripts/mingul/wicket.js
+.php-cs-fixer.cache

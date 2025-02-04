@@ -1,0 +1,31 @@
+{
+  "name": "wicket/listing",
+  "title": "Listing",
+  "description": "A Wicket block for listing",
+  "style": "block-wicket-listing",
+  "category": "theme",
+  "icon": "welcome-widgets-menus",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "styles": [],
+  "supports": {
+    "anchor": false,
+    "align": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    },
+    "alignText": true,
+    "fullHeight": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

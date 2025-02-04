@@ -1,0 +1,14 @@
+<?php
+/**
+ * Title: A block template for listings
+ * Slug: wicket/listing-block-template
+ * Inserter: true
+ * Categories: wicket 
+ */
+
+?>
+<!-- wp:wicket/banner {"name":"wicket/banner","data":{"banner_title":"Title of Listing Page","_banner_title":"field_6595533eeaf64","banner_intro":"Intro - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis","_banner_intro":"field_65955dccef545","banner_show_breadcrumbs":"1","_banner_show_breadcrumbs":"field_65955521c253b","banner_show_share":"1","_banner_show_share":"field_65955e997d768","banner_background_style":"light","_banner_background_style":"field_659e9f52f673c","banner_text_alignment":"left","_banner_text_alignment":"field_6595748b1c0dc","banner_image":"no-image","_banner_image":"field_65aa70754a630","banner_call_to_action_title":"","_banner_call_to_action_title":"field_659823f974c22","banner_call_to_action_description":"","_banner_call_to_action_description":"field_6598240674c23","banner_call_to_action_links":"","_banner_call_to_action_links":"field_6598245774c25","banner_call_to_action":"","_banner_call_to_action":"field_659823d874c21"},"align":"full","mode":"preview","alignText":"left","lock":{"move":true,"remove":true}} /-->
+
+<!-- wp:wicket/featured-posts {"name":"wicket/featured-posts","data":{"featured_posts_title":"Featured posts","_featured_posts_title":"field_65bcd11a9ebb3","featured_posts_posts":["743","803","765","740"],"_featured_posts_posts":"field_65bcc9168d765","featured_posts_hide_excerpt":"1","_featured_posts_hide_excerpt":"field_65bcc9168d7bc","featured_posts_hide_date":"0","_featured_posts_hide_date":"field_65bcc9168d823","featured_posts_hide_featured_image":"0","_featured_posts_hide_featured_image":"field_65bcc9168d870","featured_posts_hide_content_type":"0","_featured_posts_hide_content_type":"field_65bcc9168d8b4","featured_posts_style":"one-level","_featured_posts_style":"field_65bccc9879254","featured_posts_column_count":"4","_featured_posts_column_count":"field_65bccd60e6b4e"},"mode":"edit","alignText":"left","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|800"}}}} /-->
+
+<!-- wp:wicket/listing {"name":"wicket/listing","data":{"field_65c2245631b3e":"post","field_65c22735c5864":"9","field_65c6205a6e855":{"row-0":{"field_65c6206a6e856":"content_type","field_65c6207a6e857":"Select content type"},"row-1":{"field_65c6206a6e856":"post_tag","field_65c6207a6e857":"Select tag"}},"field_65f184f1e967c":"0"},"mode":"edit","alignText":"left","lock":{"move":true,"remove":true}} /-->

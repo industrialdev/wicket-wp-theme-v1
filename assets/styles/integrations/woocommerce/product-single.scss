@@ -1,0 +1,107 @@
+.woocommerce {
+  & > .single-product {
+    padding-top: 1rem;
+  }
+
+  .single-product__container {
+    @apply grid grid-cols-1 lg:grid-cols-[42%_minmax(58%,_1fr)] gap-5;
+  }
+
+  div.product {
+    /* Price */
+    p.price {
+      color: var(--wp--preset--color--black);
+      font-size: var(--wp--preset--font-size--body-lg);
+      margin-bottom: 1rem;
+
+      del {
+        opacity: 1;
+        margin-right: 0.5rem;
+      }
+
+      ins {
+        text-decoration: none;
+      }
+    }
+
+    /* Quantity */
+    .quantity {
+      .qty {
+        min-width: 70px;
+      }
+    }
+
+    /* Short description */
+    .woocommerce-product-details__short-description {
+      margin-bottom: 1rem;
+    }
+
+    /* Stock */
+    p.stock {
+      font-weight: bold;
+      font-style: italic;
+      color: var(--wp--preset--color--dark);
+      margin-bottom: 1rem;
+
+      &.out-of-stock {
+        color: var(--wp--preset--color--danger);
+      }
+    }
+
+    /* Add to cart */
+    form.cart {
+      div.quantity {
+        margin-right: 1rem;
+      }
+
+      .button {
+        background-color: var(--wp--preset--color--primary);
+        color: var(--wp--preset--color--white);
+        padding: 1rem;
+      }
+    }
+
+    /* Product meta */
+    .product_meta {
+      .sku_wrapper {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .posted_in {
+        display: block;
+        margin-bottom: 1rem;
+        font-weight: bold;
+
+        a {
+          font-weight: normal;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    /* Social sharing */
+    .component-social-sharing {
+      margin-top: 1rem;
+
+      .component-button {
+        background-color: transparent;
+        display: flex;
+        color: var(--wp--preset--color--primary);
+      }
+    }
+  }
+
+  /* Woocommerce Membership notifications */
+  .woocommerce {
+    padding: 0;
+  }
+
+  /* Case: If product type is external */
+  .product-type-external {
+    /* Add to cart button */
+    .single_add_to_cart_button {
+      @include add-external-icon;
+    }
+  }
+}

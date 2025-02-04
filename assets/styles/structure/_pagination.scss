@@ -1,0 +1,42 @@
+.pagination {
+  text-align: center;
+  font-size: 18px;
+
+  .current-page {
+    display: inline-block;
+    margin: 15px 20px;
+  }
+
+  .page-numbers {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 10px;
+    font-size: 22px;
+    width: 45px;
+    transition: color 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .next {
+    margin-left: 15px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .prev {
+    margin-right: 15px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  a {
+    border-bottom: none;
+  }
+}

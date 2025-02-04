@@ -1,0 +1,87 @@
+/* -------------------------------------------------------------------------
+ * CORE BUTTON BLOCK
+ * ------------------------------------------------------------------------- */
+
+ .wp-block-buttons {
+  &.wp-block-buttons-is-layout-flex {
+    gap: var(--wp--preset--spacing--150);
+  }
+
+  // Don't let general block widths mess with button widths
+  .wp-block-button {
+    width: unset;
+
+    &.alignfull {
+      width: 100%;
+    }
+  }
+  &.alignfull {
+    .wp-block-button {
+      width: 100%;
+    }
+  }
+}
+
+.wp-block-button {
+  .wp-block-button__link.wp-element-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--100);
+
+    &[target="_blank"] {
+      @include add-external-icon;
+    }
+
+    /* Default (Primary) button */
+    @extend .button !optional;
+    @extend .button--primary !optional;
+
+    &:hover {
+      img {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  /* Default (Primary) button */
+  &.is-style-default {
+    .wp-block-button__link.wp-element-button {
+      @extend .button !optional;
+      @extend .button--primary !optional;
+
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+
+  /* Secondary button */
+  &.is-style-secondary {
+    .wp-block-button__link.wp-element-button {
+      @extend .button !optional;
+      @extend .button--secondary !optional;
+
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+
+  /* Ghost button */
+  &.is-style-ghost {
+    .wp-block-button__link.wp-element-button {
+      @extend .button !optional;
+      @extend .button--secondary !optional;
+
+      &:hover {
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+}

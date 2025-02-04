@@ -1,0 +1,16 @@
+{
+  "name": "industrialdev/wicket-wp-theme",
+  "description": "Wicket Theme",
+  "keywords": ["wordpress", "theme"],
+  "homepage": "https://github.com/industrialdev/wicket-wp-theme",
+  "authors": [
+    {
+      "name": "Wicket",
+      "homepage": "https://wicket.io"
+    }
+  ],
+  "type": "wordpress-theme",
+  "require": {
+    "php": ">=8.0"
+  }
+}

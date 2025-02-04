@@ -1,0 +1,23 @@
+.woocommerce {
+  div.product {
+    form.cart {
+      .group_table {
+        margin-bottom: 1rem;
+        border-bottom: none;
+
+        tr {
+          border-bottom: 1px solid #e9eaea;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        td {
+          vertical-align: middle;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}

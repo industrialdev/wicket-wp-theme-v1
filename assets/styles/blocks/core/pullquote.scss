@@ -1,0 +1,11 @@
+.wp-block-pullquote {
+  border-top: 1px solid var(--wp--preset--color--light-030);
+  border-bottom: 1px solid var(--wp--preset--color--light-030);
+  color: var(--wp--preset--color--tertiary);
+  padding: 2em 0;
+
+  cite {
+    margin-top: 20px;
+    display: block;
+  }
+}

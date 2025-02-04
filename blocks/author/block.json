@@ -1,0 +1,31 @@
+{
+  "name": "wicket/author",
+  "title": "Author",
+  "description": "A Wicket block for author",
+  "style": "block-wicket-author",
+  "category": "theme",
+  "icon": "admin-users",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "styles": [],
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": false,
+      "link": false
+    },
+    "alignText": true,
+    "fullHeight": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

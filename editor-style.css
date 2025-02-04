@@ -1,0 +1,10 @@
+blockquote{
+	padding:20px;
+	margin-left:0;
+	padding-right:0;
+	border-left:5px solid #000;
+}
+
+.text--large{
+	font-size:18px;
+}

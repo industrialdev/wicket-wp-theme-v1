@@ -1,0 +1,61 @@
+{
+    "key": "group_6602a771ea991",
+    "title": "Shared - Taxonomy",
+    "fields": [
+        {
+            "key": "field_6602a771ef4a9",
+            "label": "Taxonomy",
+            "name": "taxonomy",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "0": "-- Select Taxonomy --",
+                "category": "Categories",
+                "post_tag": "Tags",
+                "post_format": "Formats",
+                "product_cat": "Product categories",
+                "product_tag": "Product tags",
+                "product_shipping_class": "Product shipping classes",
+                "news_type": "News Type",
+                "resource_type": "Resource Type",
+                "topics": "Topics"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "translation",
+    "modified": 1712052894
+}

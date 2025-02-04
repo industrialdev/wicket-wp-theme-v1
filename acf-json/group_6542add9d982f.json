@@ -1,0 +1,178 @@
+{
+    "key": "group_6542add9d982f",
+    "title": "Header Settings",
+    "fields": [
+        {
+            "key": "field_6542addaa2bf7",
+            "label": "Tracking Codes in < head >",
+            "name": "tracking_codes_in_head",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 10,
+            "placeholder": "E.g. <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https:\/\/www.googletagmanager.com\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PBZBHM');<\/script> <!-- End Google Tag Manager -->",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6542af43f4335",
+            "label": "Tracking Codes Right After < body >",
+            "name": "tracking_codes_right_after_body",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "maxlength": "",
+            "rows": 10,
+            "placeholder": "E.g. <!-- Google Tag Manager (noscript) -->   <noscript><iframe src=\"https:\/\/www.googletagmanager.com\/ns.html?id=GTM-PBZBHM\"   height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"><\/iframe><\/noscript>   <!-- End Google Tag Manager (noscript) -->",
+            "new_lines": ""
+        },
+        {
+            "key": "field_655528fee6a91",
+            "label": "Secondary Nav Search Enabled",
+            "name": "secondary_nav_search_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": "",
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_65552939e6a92",
+            "label": "Secondary Nav Language Toggle Enabled",
+            "name": "secondary_nav_language_toggle_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": "",
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_65552952e6a93",
+            "label": "Secondary Nav Cart Enabled",
+            "name": "secondary_nav_cart_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": "",
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_655bd3d5b6ced",
+            "label": "Mobile Menu: Use Sub-Menu Dropdowns",
+            "name": "mobile_menu_sub_menu_dropdowns",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_66858df5a3430",
+            "label": "AC Localization",
+            "name": "ac_localization",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "account-center": "Account Center",
+                "account-centre": "Account Centre"
+            },
+            "default_value": "account-center",
+            "return_format": "array",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-header"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1700516873
+}

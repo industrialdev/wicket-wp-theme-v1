@@ -1,0 +1,320 @@
+{
+    "key": "group_665748c5f2451",
+    "title": "Global Search Settings",
+    "fields": [
+        {
+            "key": "field_665748c600716",
+            "label": "Search Listing Page",
+            "name": "search_listing_page",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_665748c60cc85",
+                    "label": "Page Options",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 1
+                },
+                {
+                    "key": "field_665748c60cccb",
+                    "label": "Show Search Bar",
+                    "name": "show_search_bar",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_665748c60cd12",
+                    "label": "Show Filter Bar",
+                    "name": "show_filter_bar",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_665748c60cd5b",
+                    "label": "Show Filter By Published Date",
+                    "name": "show_filter_by_published_date",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_665748c60cda1",
+                    "label": "Posts Per Page",
+                    "name": "posts_per_page",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 10,
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_665748c60cde6",
+                    "label": "Excluded Post Types",
+                    "name": "excluded_post_types",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the post types you want to exclude from the filters area of the search page. For example: \"post,page\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php\">cheat sheet<\/a> for available post types on this site (must be an admin).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. post,page",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_665748c60ce2c",
+                    "label": "Excluded Post IDs",
+                    "name": "excluded_post_ids",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the post IDs you want to exclude from the filters area of the search page. For example: \"12,58,4\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php\">cheat sheet<\/a> for available post IDs on this site (must be an admin).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. 12,58,4",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_665748c60ce71",
+                    "label": "Taxonomy Filters",
+                    "name": "taxonomy_filters",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the taxonomies you want displayed in the filters area of the search page. For example: \"category,product_type,nav_menu\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php\">cheat sheet<\/a> for available taxonomy slugs on this site (must be an admin).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. category,product_type,nav_menu",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_669a0b9e429e2",
+                    "label": "Post Type Filters",
+                    "name": "post_type_filters",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter a comma separated list of the post types you want displayed in the filters area of the search page. For example: \"news,resources\". See the <a target=\"_blank\" href=\"\/app\/themes\/wicket-wp-theme\/custom\/wp_terms_cheat_sheet.php#post_types\">cheat sheet<\/a> for available post types on this site (must be an admin).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "E.g. news,resources",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_665748c60ceb6",
+                    "label": "Card Options",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_665748c60cefc",
+                    "label": "Card: Show Featured Image",
+                    "name": "card_show_featured_image",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_665748c60cf41",
+                    "label": "Card: Show Content Type Tags",
+                    "name": "card_show_content_type_tags",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_665748c60cf87",
+                    "label": "Card: Show Published Date",
+                    "name": "card_show_published_date",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_665748c60cfcd",
+                    "label": "Card: Show Excerpt",
+                    "name": "card_show_excerpt",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-global-search"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1716996324
+}

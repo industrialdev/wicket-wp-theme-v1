@@ -1,0 +1,39 @@
+/* Setting the max-width of the content area for all blocks */
+*[class*='wp-block'] {
+  //@apply container;
+  @include the-container;
+
+  &:not(.wp-block-heading) {
+    margin-bottom: 1rem;
+  }
+
+  // Disable margin-bottom for nested blocks
+  *[class*='wp-block'] {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: var(--wp--style--global--content-size);
+  }
+  @media (min-width: var(--wp--style--global--content-size)) {
+    max-width: var(--wp--style--global--content-size);
+  }
+
+  &.alignfull {
+    max-width: 100% !important;
+  }
+}
+
+#main-content {
+  // Case: First level blocks are core blocks add mobile inline padding
+  &
+    > *:is(.wp-block-heading, .wp-block-paragraph, .wp-block-columns):not(
+      .alignfull
+    ) {
+    padding-inline: 1rem;
+
+    @include media-breakpoint-down('1024px') {
+      padding-inline: 0;
+    }
+  }
+}

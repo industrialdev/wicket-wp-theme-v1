@@ -1,0 +1,11 @@
+/* Admin specific styles */
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+  margin-top: 0 !important;
+  background-color: var(--wp--preset--color--light-020);
+}
+.editor-styles-wrapper .editor-post-title {
+  font-size: var(--wp--preset--font-size--large);
+  font-weight: bold;
+  padding: 5px 20px;
+}
+/*# sourceMappingURL=../../maps/admin.css.map */

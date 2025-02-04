@@ -1,0 +1,60 @@
+{
+    "key": "group_6602a59e10a4c",
+    "title": "Shared - Post Type",
+    "fields": [
+        {
+            "key": "field_6602a59e4176f",
+            "label": "Post Type",
+            "name": "post_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "choices": {
+                "0": "-- Select Post Type --",
+                "post": "Posts",
+                "page": "Pages",
+                "attachment": "Media",
+                "product": "Products",
+                "wppcp_group": "Groups",
+                "wppcp_fproduct_tabs": "Woo Product Tabs",
+                "news": "News",
+                "resources": "Resources"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "translation",
+    "modified": 1712052908
+}

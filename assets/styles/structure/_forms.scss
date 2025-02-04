@@ -1,0 +1,151 @@
+form,
+.form {
+  input,
+  select,
+  textarea {
+    font-weight: 400;
+    font-family: inherit;
+    border: 1px solid var(--dark-060, #7b7f83);
+    background: var(--light-000, #fff);
+    border-radius: 4px;
+    padding: 11px 16px;
+
+    &::placeholder {
+      font-style: italic;
+      color: var(--light-040, #a7aaad);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:disabled {
+      border: 1px solid var(--light-020, #d3d4d6);
+      color: var(--light-020, #d3d4d6);
+    }
+
+    &.error {
+      $error-color: var(--danger-100, #dc3545);
+      border: 1px solid $error-color;
+      // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+      // TODO: make the SVG <g> below use $error-color
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 15px;
+    }
+
+    &.success {
+      $success-color: var(--success-100, #198754);
+      border: 1px solid $success-color;
+      // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+      // TODO: make the SVG <g> below use var(--success-100, #198754)
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 15px;
+    }
+  }
+
+  input {
+    &[type='radio'],
+    &[type='checkbox'] {
+      margin: 3px;
+      // TODO: Align this with central colors variable
+      accent-color: #000;
+
+      &:focus {
+        // TODO: Align this with central colors variable
+        filter: drop-shadow(0px 0px 1px #0997ff);
+      }
+
+      &:disabled {
+        accent-color: var(--light-020, #d3d4d6);
+
+        // NOTE: For this rule to work, the label must be immediately after the radio or checkbox input
+        & + label {
+          color: var(--light-020, #d3d4d6);
+        }
+      }
+    }
+  }
+
+  select {
+    &:not([multiple]) {
+      appearance: none;
+      // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 15px;
+    }
+
+    &.error {
+      // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+      // TODO: make the SVG <g> below use $error-color
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23DC3545" fill="%23DC3545"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c-13.3 0-24 10.7-24 24V264c0 13.3 10.7 24 24 24s24-10.7 24-24V152c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></g></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
+      background-position: right 30px center, right 10px center;
+      background-repeat: no-repeat, no-repeat;
+      background-size: 15px, 15px;
+    }
+
+    &.success {
+      // <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+      // TODO: make the SVG <g> below use var(--success-100, #198754)
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><g stroke-linecap="round" stroke-width="4" stroke="%23198754" fill="%23198754"><path d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM363.3 203.3L374.6 192 352 169.4l-11.3 11.3L224 297.4l-52.7-52.7L160 233.4 137.4 256l11.3 11.3 64 64L224 342.6l11.3-11.3 128-128z"/></g></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"/></svg>');
+      background-position: right 30px center, right 10px center;
+      background-repeat: no-repeat, no-repeat;
+      background-size: 15px, 15px;
+    }
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    margin-bottom: 2px;
+
+    &.required {
+      &:after {
+        content: '*';
+        color: var(--danger-100, #dc3545);
+      }
+    }
+
+    &.forCheckOrRadio {
+      font-weight: 400;
+    }
+  }
+
+  .wicket-form-help-text,
+  p.wicket-form-help-text {
+    margin: 5px 0px 0px;
+    font-size: 14px;
+    color: var(--dark-070, #656a6f);
+
+    &.forCheckOrRadio {
+      margin: 0px 20px 0px;
+    }
+
+    &.error {
+      color: var(--danger-100, #dc3545);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &.wicket-form {
+    display: flex;
+    flex-direction: column;
+
+    .wicket-form-field-wrapper {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
