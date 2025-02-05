@@ -233,29 +233,14 @@ function minSass() {
     .pipe(browserSync.stream());
 }
 
-function scriptsTask() {
-  return gulp
-    .src(jsFiles)
-    .pipe(gulpIgnore.exclude(wicketPaths.adminScripts))
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(webpack({}))
-    .pipe(concat(`${wicketPaths.script}.js`))
-}
-
 function minScripts() {
   return gulp
     .src(`${wicketPaths.src}${wicketPaths.assets}/scripts/${wicketPaths.script}.js`)
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(webpack({}))
+    .pipe(rename({ basename: wicketPaths.script, suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest(`${wicketPaths.src}${wicketPaths.assets}/scripts/min`));
-}
-
-function scriptsTaskAdmin() {
-  return gulp
-    .src(adminJsFiles)
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(concat(`${wicketPaths.script}-wp-admin.js`))
+    .pipe(gulp.dest(`${wicketPaths.src}${wicketPaths.assets}/scripts/min/`));
 }
 
 function minScriptsAdmin() {
@@ -305,14 +290,14 @@ function watchTask() {
 
   const themeJsonPath = `${wicketPaths.src}/theme.json`;
 
-  gulp.watch(jsLocations, gulp.series(scriptsTask, minScripts, scriptsTaskAdmin, minScriptsAdmin)).on('change', browserSync.reload);
+  gulp.watch(jsLocations, gulp.series(minScripts, minScriptsAdmin)).on('change', browserSync.reload);
   gulp.watch(scssTailwindLocations, gulp.series(sassTask, minSass)).on('change', browserSync.reload);
   gulp.watch(themeJsonPath, gulp.series(themeJsonToSCSS, sassTask, minSass)).on('change', browserSync.reload);
 }
 
 module.exports = {
   sass: gulp.series(themeJsonToSCSS, sassTask, minSass),
-  scripts: gulp.series(scriptsTask, minScripts, scriptsTaskAdmin, minScriptsAdmin),
+  scripts: gulp.series(minScripts, minScriptsAdmin),
   images: gulp.series(imagesTask, iconsTask),
   watch: gulp.series(watchTask),
   jsonvars: gulp.series(themeJsonToSCSS),
@@ -320,9 +305,7 @@ module.exports = {
     themeJsonToSCSS,
     sassTask,
     minSass,
-    scriptsTask,
     minScripts,
-    scriptsTaskAdmin,
     minScriptsAdmin,
     fontsTask,
     watchTask
@@ -332,9 +315,7 @@ module.exports = {
     themeJsonToSCSS,
     sassTask,
     minSass,
-    scriptsTask,
     minScripts,
-    scriptsTaskAdmin,
     minScriptsAdmin,
     imagesTask,
     iconsTask,
