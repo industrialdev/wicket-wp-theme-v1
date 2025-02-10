@@ -101,7 +101,7 @@ form,
     }
   }
 
-  label {
+  label:not([for^="choice"]) {
     font-size: 16px;
     font-weight: 700;
     font-family: inherit;

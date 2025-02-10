@@ -583,6 +583,9 @@ video {
 .visible {
   visibility: visible;
 }
+.collapse {
+  visibility: collapse;
+}
 .static {
   position: static;
 }
@@ -224938,20 +224941,20 @@ form select.success,
   background-repeat: no-repeat, no-repeat;
   background-size: 15px, 15px;
 }
-form label,
-.form label {
+form label:not([for^=choice]),
+.form label:not([for^=choice]) {
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   margin-bottom: 2px;
 }
-form label.required:after,
-.form label.required:after {
+form label:not([for^=choice]).required:after,
+.form label:not([for^=choice]).required:after {
   content: "*";
   color: var(--danger-100, #dc3545);
 }
-form label.forCheckOrRadio,
-.form label.forCheckOrRadio {
+form label:not([for^=choice]).forCheckOrRadio,
+.form label:not([for^=choice]).forCheckOrRadio {
   font-weight: 400;
 }
 form .wicket-form-help-text,
