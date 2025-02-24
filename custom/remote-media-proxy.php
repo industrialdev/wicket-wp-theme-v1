@@ -6,15 +6,18 @@ if (!defined('ABSPATH')) {
 }
 
 /*
- * Wicket_Remote_Media_Proxy class.
+ * Remote media proxy
  *
- * Configuration.
- * Adjust the constant WICKET_REMOTE_MEDIA_URL to your desired remote site.
+ * Allows local dev sites to proxy remote media assets to a remote site.
+ * Helps to work locally, without having to download assets from the server and to not experience local slowdowns because of missing "uploads" content.
+ *
+ * Copy the following snippet (the while add_filter) into your child theme, and set the URL to your remote media site (generally: staging site).
+ *
  * Example:
  *
- * define( 'WICKET_REMOTE_MEDIA_URL', 'https://wordpress-baseline-sandbox.ind.ninja' );
- *
- * Use the proper URL for the desired remote site.
+ * add_filter('wicket_remote_media_proxy_url', function () {
+ *    return 'https://wordpress-baseline-sandbox.ind.ninja/';
+ * });
  */
 
 class Wicket_Remote_Media_Proxy
