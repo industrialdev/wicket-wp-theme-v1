@@ -81,6 +81,35 @@
           "ui_off_text": ""
       },
       {
+          "key": "field_heading_level",
+          "label": "Heading Level",
+          "name": "heading_level",
+          "type": "select",
+          "instructions": "Select the heading level for the accordion titles.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+          },
+          "choices": {
+              "h1": "H1",
+              "h2": "H2",
+              "h3": "H3",
+              "h4": "H4",
+              "h5": "H5",
+              "h6": "H6"
+          },
+          "default_value": "h4",
+          "allow_null": 0,
+          "multiple": 0,
+          "ui": 0,
+          "return_format": "value",
+          "ajax": 0,
+          "placeholder": ""
+      },
+      {
           "key": "field_65bbe954024ec",
           "label": "Accordion Items",
           "name": "accordion_items",
