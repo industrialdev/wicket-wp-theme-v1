@@ -364,6 +364,8 @@ function init( $block = [] ) {
 						],
 					];
 
+					$args = apply_filters( 'wicket_listing_block_query_args', $args );
+
 					$query       = new \WP_Query( $args );
 					$posts       = $query->posts;
 					$total_posts = $query->found_posts;
