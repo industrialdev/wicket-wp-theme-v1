@@ -217,7 +217,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "wicket\/icongrid"
+                "value": "wicket\/icon-grid"
             }
         ]
     ],
@@ -230,6 +230,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "advanced",
-    "modified": 1724236966
+    "modified": 1742566045
 }
