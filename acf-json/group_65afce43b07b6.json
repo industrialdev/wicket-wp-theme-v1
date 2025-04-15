@@ -96,7 +96,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 1,
             "choices": {
                 "link": "Link",
                 "button": "Button"
@@ -134,6 +134,28 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_67fe3ab7a0b47",
+            "label": "Full Height",
+            "name": "full_height",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -155,5 +177,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1706095139
+    "modified": 1744714444
 }
