@@ -37,11 +37,11 @@ if ( ! function_exists( 'wicket_breadcrumb' ) ) {
 			false
 		);
 		$url       = get_permalink();
-		if ( str_contains( $url, 'resource' ) ) {
+		if ( str_contains( $url, '/resource/' ) ) {
 			$crumbs[] = '<span class="bold">' . __( 'Resources', 'wicket' ) . '</span>';
-		} elseif ( str_contains( $url, 'news' ) ) {
+		} elseif ( str_contains( $url, '/news/' ) ) {
 			$crumbs[] = '<span class="bold">' . __( 'News', 'wicket' ) . '</span>';
-		} elseif ( str_contains( $url, 'event' ) ) {
+		} elseif ( str_contains( $url, '/event/' ) ) {
 			$crumbs[] = '<span class="bold">' . __( 'Events', 'wicket' ) . '</span>';
 		} elseif ( is_page() || is_single() ) {
 			// Standard page
@@ -60,7 +60,7 @@ if ( ! function_exists( 'wicket_breadcrumb' ) ) {
 							'classes' => [ '' ],
 							'default_link_style' => true,
 							'url'     => get_permalink( $ancestor ),
-							'text'    => get_the_title( $ancestor ),
+							'text'    => wp_trim_words(get_the_title($ancestor), 5, '...'),
 						],
 						false
 					);

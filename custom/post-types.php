@@ -52,6 +52,11 @@ function register_cpt( $singular, $plural = false, $args = [] ) {
 
 	$args = wp_parse_args( $args, $defaults );
 
+	$filter_args = apply_filters( 'wicket_post_type_args', $args, sanitize_title( $singular ) );
+	if (!empty($filter_args)) {
+	    $args = wp_parse_args($filter_args, $defaults);
+	}
+
 	register_post_type( sanitize_title( $singular ), $args );
 }
 

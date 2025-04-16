@@ -193,7 +193,7 @@ function init( $block = [] ) {
 	}
 
 	/* Add additional taxonomies to tax query if they are set */
-	if ( ! empty( $additional_taxonomies ) ) {
+	if ( ! empty( $additional_taxonomies['taxonomy_terms'] ) ) {
 		$taxonomies = $additional_taxonomies['taxonomy_terms'];
 		$terms      = [];
 		foreach ( $taxonomies as $taxonomy ) {
