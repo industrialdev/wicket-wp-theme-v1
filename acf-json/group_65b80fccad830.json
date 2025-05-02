@@ -126,6 +126,7 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
                     "return_format": "array",
                     "library": "all",
                     "min_width": "",
@@ -230,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742566045
+    "modified": 1746215047
 }
