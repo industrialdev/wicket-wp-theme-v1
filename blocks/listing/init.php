@@ -7,6 +7,17 @@
 namespace Wicket\Blocks\Wicket_Listing;
 
 /**
+ * Force event ordering when no parameters are present
+ */
+function wicket_force_event_order_no_params( $orderby, $query ) {
+	if ( $query->get( 'post_type' ) === 'tribe_events' && $query->get( 'meta_key' ) === '_EventStartDate' ) {
+		global $wpdb;
+		return "{$wpdb->postmeta}.meta_value ASC";
+	}
+	return $orderby;
+}
+
+/**
  * Listing block registration function
  */
 function init( $block = [] ) {
@@ -15,8 +26,12 @@ function init( $block = [] ) {
 		'class' => 'block-wicket-listing alignfull',
 	] );
 
-	$post_type                 = $block['post_type'] ?? get_field( 'listing_post_type' );
-	$default_order_by          = get_field( 'listing_sort_by' ) ?? 'date-desc';
+	$post_type        = $block['post_type'] ?? get_field( 'listing_post_type' );
+	$default_order_by = get_field( 'listing_sort_by' ) ?? 'date-desc';
+	// Default to ascending order for events to show upcoming events first
+	if ( $post_type == 'tribe_events' && $default_order_by == 'date-desc' ) {
+		$default_order_by = 'date-asc';
+	}
 	$news_types                = $block['news_types'] ?? get_field( 'listing_news_type' );
 	$resource_types            = $block['resource_types'] ?? get_field( 'listing_resource_type' );
 	$topics_types              = $block['topics_types'] ?? get_field( 'listing_topic' );
@@ -43,7 +58,17 @@ function init( $block = [] ) {
 
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-	switch ( $default_order_by ) {
+	/* Determine the sort-by value to use */
+	// Check if we have any query parameters at all
+	$has_query_params = ! empty( $_GET );
+	$sort_by          = isset( $_GET['sort-by'] ) ? $_GET['sort-by'] : $default_order_by;
+
+	// Initialize variables for proper scoping
+	$orderby = 'date';  // Default to date ordering
+	$order   = 'DESC';  // Default to DESC
+
+	/* Apply sorting based on sort-by value */
+	switch ( $sort_by ) {
 		case 'alpha-asc':
 			$orderby = 'title';
 			$order = 'ASC';
@@ -59,6 +84,11 @@ function init( $block = [] ) {
 		case 'date-desc':
 			$orderby = 'date';
 			$order = 'DESC';
+			break;
+		default:
+			// Ensure defaults are applied if no case matches
+			$orderby = 'date';
+			$order = ( $post_type == 'tribe_events' ) ? 'ASC' : 'DESC';
 			break;
 	}
 
@@ -79,26 +109,6 @@ function init( $block = [] ) {
 		$excluded_posts = array_map( function ($post) {
 			return $post->ID;
 		}, $exclude_from_results );
-	}
-
-	/* Get sort by from query string */
-	if ( isset( $_GET['sort-by'] ) ) {
-		if ( $_GET['sort-by'] == 'date-desc' ) {
-			$orderby = 'date';
-			$order   = 'DESC';
-		}
-		if ( $_GET['sort-by'] == 'date-asc' ) {
-			$orderby = 'date';
-			$order   = 'ASC';
-		}
-		if ( $_GET['sort-by'] == 'alpha-asc' ) {
-			$orderby = 'title';
-			$order   = 'ASC';
-		}
-		if ( $_GET['sort-by'] == 'alpha-desc' ) {
-			$orderby = 'title';
-			$order   = 'DESC';
-		}
 	}
 
 	/* Get keyword from search form */
@@ -328,28 +338,20 @@ function init( $block = [] ) {
 					class="block-wicket-listing__entries <?php echo ! empty( $taxonomy_filters ) ? 'basis-3/4' : 'basis-full' ?> pt-4 lg:pt-10">
 					<?php
 					$args = [ 
-						'post_type'      => $post_type,
-						'posts_per_page' => $posts_per_page,
-						'paged'          => $paged,
-						'orderby'        => $orderby,
-						'order'          => $order,
-						's'              => $keyword,
-						'tax_query'      => $tax_query,
+						'post_type'           => $post_type,
+						'post_status'         => 'publish',
+						'posts_per_page'      => $posts_per_page,
+						'paged'               => $paged,
+						'orderby'             => $orderby,
+						'order'               => $order,
+						's'                   => $keyword,
+						'tax_query'           => $tax_query,
+						'ignore_sticky_posts' => true,
 					];
 
-					/* Add start date and end date to tax query if they are set */
-					if ( isset( $_GET['start_date'] ) && isset( $_GET['end_date'] ) ) {
-						$start_date = $_GET['start_date'];
-						$end_date   = $_GET['end_date'];
-
-						$args['date_query'] = [ 
-							'after'     => $start_date,
-							'before'    => $end_date,
-							'inclusive' => true,
-						];
-					}
-
-					$args['meta_query'] = [ 
+					/* Set up base meta_query for hide_on_listings */
+					$meta_query = [ 
+						'relation' => 'AND',
 						[ 
 							'relation' => 'OR',
 							[ 
@@ -364,9 +366,88 @@ function init( $block = [] ) {
 						],
 					];
 
+					// Check if date filter is applied (moved outside to ensure proper scope)
+					$has_date_filter = ( isset( $_GET['start_date'] ) && ! empty( $_GET['start_date'] ) ) || ( isset( $_GET['end_date'] ) && ! empty( $_GET['end_date'] ) );
+
+					/* Order by event start date for tribe_events */
+					if ( $post_type == 'tribe_events' ) {
+						// For events, always use event date for sorting unless it's alphabetical
+						if ( $orderby !== 'title' ) {
+							// Override the orderby parameters for events
+							$args['meta_key']  = '_EventStartDate';
+							$args['orderby']   = 'meta_value';
+							$args['meta_type'] = 'DATETIME';
+							$args['order']     = $order; // Ensure order is applied
+						}
+
+						// Show only future events by default (unless date filter is applied)
+						if ( ! $has_date_filter ) {
+							// Get current time using WordPress timezone settings
+							$current_time = current_time( 'timestamp' );
+							$today        = date( 'Y-m-d 00:00:00', $current_time );
+
+							$meta_query[] = [ 
+								'key'     => '_EventStartDate',
+								'value'   => $today,
+								'compare' => '>=',
+								'type'    => 'DATETIME',
+							];
+						}
+					}
+
+					/* Add start date and end date to date query if they are set and not empty */
+					if ( isset( $_GET['start_date'] ) && ! empty( $_GET['start_date'] ) && isset( $_GET['end_date'] ) && ! empty( $_GET['end_date'] ) ) {
+						$start_date = $_GET['start_date'];
+						$end_date   = $_GET['end_date'];
+
+						$args['date_query'] = [ 
+							'after'     => $start_date,
+							'before'    => $end_date,
+							'inclusive' => true,
+						];
+					}
+
+					$args['meta_query'] = $meta_query;
+
 					$args = apply_filters( 'wicket_listing_block_query_args', $args );
 
-					$query       = new \WP_Query( $args );
+					// Final override for tribe_events to ensure our sorting is applied
+					if ( $post_type == 'tribe_events' ) {
+						// If we're sorting by date (not alphabetically)
+						if ( ! isset( $args['orderby'] ) || $args['orderby'] !== 'title' ) {
+							// Force event date sorting
+							$args['meta_key']  = '_EventStartDate';
+							$args['orderby']   = 'meta_value';
+							$args['meta_type'] = 'DATETIME';
+
+							// Determine the order
+							if ( ! isset( $_GET['sort-by'] ) ) {
+								// No sort parameter at all - force ASC for events
+								$args['order'] = 'ASC';
+							} elseif ( $_GET['sort-by'] == 'date-asc' ) {
+								$args['order'] = 'ASC';
+							} elseif ( $_GET['sort-by'] == 'date-desc' ) {
+								$args['order'] = 'DESC';
+							} else {
+								// Fallback to ASC for any other value
+								$args['order'] = 'ASC';
+							}
+						}
+					}
+
+					// For events, add a late filter to ensure our ordering survives
+					$filter_added = false;
+					if ( $post_type == 'tribe_events' && empty( $_GET['sort-by'] ) ) {
+						$filter_added = true;
+						add_filter( 'posts_orderby', 'wicket_force_event_order_no_params', 9999, 2 );
+					}
+
+					$query = new \WP_Query( $args );
+
+					// Remove the filter if we added it
+					if ( $filter_added ) {
+						remove_filter( 'posts_orderby', 'wicket_force_event_order_no_params', 9999 );
+					}
 					$posts       = $query->posts;
 					$total_posts = $query->found_posts;
 					?>
@@ -393,8 +474,14 @@ function init( $block = [] ) {
 							</label>
 							<select name="sort-by" id="sort-by" class="min-w-[260px]" onchange="this.form.submit()">
 								<?php
-								$date_desc_label  = __( 'Date (newest-oldest)', 'industrial' );
-								$date_asc_label   = __( 'Date (oldest-newest)', 'industrial' );
+								// Update labels for events to clarify we're sorting by event date
+								if ( $post_type == 'tribe_events' ) {
+									$date_desc_label = __( 'Event Date (latest-earliest)', 'industrial' );
+									$date_asc_label  = __( 'Event Date (earliest-latest)', 'industrial' );
+								} else {
+									$date_desc_label = __( 'Date (newest-oldest)', 'industrial' );
+									$date_asc_label  = __( 'Date (oldest-newest)', 'industrial' );
+								}
 								$alpha_asc_label  = __( 'Alphabetical (a-z)', 'industrial' );
 								$alpha_desc_label = __( 'Alphabetical (z-a)', 'industrial' );
 								if ( isset( $_GET['sort-by'] ) ) : ?>
