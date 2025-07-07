@@ -264,19 +264,14 @@ function init( $block = [] ) {
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
 			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
-				$taxonomy_args = [ 
-					'taxonomy' => $taxonomy['slug'],
-					'field'    => 'slug',
-					'operator' => 'IN',
-					'terms'    => $_GET[ $taxonomy['slug'] ],
-				];
-
-				$has_filters = true;
+                $taxonomy_args = [ 
+                    'taxonomy' => $taxonomy['slug'],
+                    'field'    => 'slug',
+                    'operator' => 'IN',
+                    'terms'    => $_GET[ $taxonomy['slug'] ],
+                ];
+                array_push( $tax_query, $taxonomy_args );
 			}
-		}
-
-		if ( $has_filters ) {
-			$tax_query = [ $taxonomy_args ];
 		}
 	}
 
