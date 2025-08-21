@@ -264,13 +264,13 @@ function init( $block = [] ) {
 	if ( is_array( $taxonomy_filters ) ) {
 		foreach ( $taxonomy_filters as $taxonomy ) {
 			if ( isset( $_GET[ $taxonomy['slug'] ] ) ) {
-                $taxonomy_args = [ 
-                    'taxonomy' => $taxonomy['slug'],
-                    'field'    => 'slug',
-                    'operator' => 'IN',
-                    'terms'    => $_GET[ $taxonomy['slug'] ],
-                ];
-                array_push( $tax_query, $taxonomy_args );
+				$taxonomy_args = [ 
+					'taxonomy' => $taxonomy['slug'],
+					'field'    => 'slug',
+					'operator' => 'IN',
+					'terms'    => $_GET[ $taxonomy['slug'] ],
+				];
+				array_push( $tax_query, $taxonomy_args );
 			}
 		}
 	}
@@ -391,15 +391,57 @@ function init( $block = [] ) {
 					}
 
 					/* Add start date and end date to date query if they are set and not empty */
-					if ( isset( $_GET['start_date'] ) && ! empty( $_GET['start_date'] ) && isset( $_GET['end_date'] ) && ! empty( $_GET['end_date'] ) ) {
-						$start_date = $_GET['start_date'];
-						$end_date   = $_GET['end_date'];
+					$start_date = isset( $_GET['start_date'] ) && ! empty( $_GET['start_date'] ) ? $_GET['start_date'] : null;
+					$end_date   = isset( $_GET['end_date'] ) && ! empty( $_GET['end_date'] ) ? $_GET['end_date'] : null;
 
-						$args['date_query'] = [ 
-							'after'     => $start_date,
-							'before'    => $end_date,
-							'inclusive' => true,
-						];
+					if ( $start_date || $end_date ) {
+						// For tribe_events, filter by event start date using meta_query
+						if ( $post_type == 'tribe_events' ) {
+							if ( $start_date && $end_date ) {
+								// Both dates provided - use BETWEEN
+								$start_datetime = $start_date . ' 00:00:00';
+								$end_datetime   = $end_date . ' 23:59:59';
+
+								$meta_query[] = [ 
+									'key'     => '_EventStartDate',
+									'value'   => [ $start_datetime, $end_datetime ],
+									'compare' => 'BETWEEN',
+									'type'    => 'DATETIME',
+								];
+							} elseif ( $start_date ) {
+								// Only start date provided - events on or after this date
+								$start_datetime = $start_date . ' 00:00:00';
+
+								$meta_query[] = [ 
+									'key'     => '_EventStartDate',
+									'value'   => $start_datetime,
+									'compare' => '>=',
+									'type'    => 'DATETIME',
+								];
+							} elseif ( $end_date ) {
+								// Only end date provided - events on or before this date
+								$end_datetime = $end_date . ' 23:59:59';
+
+								$meta_query[] = [ 
+									'key'     => '_EventStartDate',
+									'value'   => $end_datetime,
+									'compare' => '<=',
+									'type'    => 'DATETIME',
+								];
+							}
+						} else {
+							// For other post types, use the standard date_query on post published date
+							$date_query_args = [ 'inclusive' => true ];
+
+							if ( $start_date ) {
+								$date_query_args['after'] = $start_date;
+							}
+							if ( $end_date ) {
+								$date_query_args['before'] = $end_date;
+							}
+
+							$args['date_query'] = $date_query_args;
+						}
 					}
 
 					$args['meta_query'] = $meta_query;
@@ -434,14 +476,14 @@ function init( $block = [] ) {
 					$filter_added = false;
 					if ( $post_type == 'tribe_events' && empty( $_GET['sort-by'] ) ) {
 						$filter_added = true;
-						add_filter( 'posts_orderby', 'wicket_force_event_order_no_params', 9999, 2 );
+						add_filter( 'posts_orderby', __NAMESPACE__ . '\wicket_force_event_order_no_params', 9999, 2 );
 					}
 
 					$query = new \WP_Query( $args );
 
 					// Remove the filter if we added it
 					if ( $filter_added ) {
-						remove_filter( 'posts_orderby', 'wicket_force_event_order_no_params', 9999 );
+						remove_filter( 'posts_orderby', __NAMESPACE__ . '\wicket_force_event_order_no_params', 9999 );
 					}
 					$posts       = $query->posts;
 					$total_posts = $query->found_posts;
