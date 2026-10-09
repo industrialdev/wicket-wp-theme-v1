@@ -30,6 +30,8 @@ function init( $block = [] ) {
   $no_results_found_message = get_field('orgss_no_results_found_message');
   $new_org_created_checkbox_id = get_field('orgss_new_org_created_checkbox_id');
   $display_removal_alert_message = get_field('orgss_display_removal_alert_message');
+  $hide_membership_status = get_field('orgss_hide_membership_status');
+  $hide_org_type = get_field('orgss_hide_org_type');
 
 	echo '<div ' . $attrs . '>';
 
@@ -51,6 +53,8 @@ function init( $block = [] ) {
     'no_results_found_message'            => $no_results_found_message,
     'checkbox_id_new_org'                 => $new_org_created_checkbox_id,
     'display_removal_alert_message'       => $display_removal_alert_message,
+    'hide_membership_status'              => $hide_membership_status,
+    'hide_org_type'                       => $hide_org_type,
 	] );
 
 	echo '</div>';
